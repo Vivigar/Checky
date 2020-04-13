@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,body {
+    background: white;
+    overflow-x: hidden;
+}
+
+header {
+    background: rgb(52, 113, 153);
+    border-bottom: 5px rgb(15, 66, 100) solid;
+    color: white;
+}
+
+#title {
+    font-size: 3em;
+    padding: 1rem;
+}
+
+#subtitle {
+    font-size: 0.5em;
+}
+
+#newInput {
+    width: 100%;
+    max-width: 100%;
+    line-height: 2em;
+    padding: 0 1rem;
+    background: rgb(192, 192, 192);
+    font-size: 1.5em;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(71, 71, 71);
+}
+
+.list {
+    background: rgb(216, 216, 216);
+}
+
+.list li {
+    /* padding: 1rem 1rem;
+    padding-left: 2rem; */
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.list li:nth-child(even) {
+    background: white;
+}
+
+.list li:hover {
+    background: rgb(165, 194, 214);
+    cursor: pointer;
+}
+
+.delete {
+    border: none;
+    background: none;
+    color: rgb(145, 56, 56);
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: none;
+}
+
+.delete:hover {
+    background: rgb(145, 56, 56);
+    color: white;
+}
+
+.list li:hover > .delete {
+    display: block;
+}
+
+li input[type=checkbox] {
+    display: none;
+}
+
+li input[type="checkbox"] + label {
+    padding: 1rem 2rem;
+    border-top: 1px solid rgb(180, 180, 180);
+    border-bottom: 1px solid rgb(180, 180, 180);
+    display: block;
+}
+
+li input[type=checkbox] + label::before {
+    content: "";
+    position: absolute;
+    margin-top: -1px;
+    left: 0.5rem;
+    border: 2px solid grey;
+    border-radius: 3px;
+    height: 1rem;
+    width: 1rem;
+    display: none;
+    cursor: pointer;
+}
+
+li input[type=checkbox]:checked + label::before {
+    content: "\2713";
+    font-weight: bold;
+    color: green;
+    border-color: green;
+    display: block;
+    line-height: 1.1rem;
+    text-indent: 2px;
+}
+
+input[type=checkbox]:checked > li  {
+    background-color: green;
+}
+
+li input[type=checkbox]:checked + label {
+    background-color: rgb(202, 224, 202);
+    border-top: 1px solid rgb(57, 117, 49);
+    border-bottom: 1px solid rgb(57, 117, 49);
+}
