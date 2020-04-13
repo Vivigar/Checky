@@ -1,5 +1,7 @@
 const newInput = document.getElementById("newInput");
 const entries = document.getElementById("entries");
+const introMsg = document.getElementById("introMsg");
+
 
 newInput.focus(); // Bring focus to new input as soon as page loads
 
@@ -23,6 +25,11 @@ function registerDeleteButtons() {
     deleteButtons.forEach(elmnt => {
         elmnt.addEventListener("click", () => {
             console.log(elmnt.parentNode.remove());
+
+            if (entries.childElementCount == 0) {
+                introMsg.style.display = "block";
+            }
+
         });
     });
 }
@@ -37,6 +44,8 @@ function newEntry(postID, postContent) {
         <button class="delete">X</button>`;
 
     entries.appendChild(newEntry);
+
+    introMsg.style.display = "none";
 
     registerDeleteButtons();
 };
